@@ -14,12 +14,6 @@
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 $yellow: #ffd862;
 
 * {
@@ -27,11 +21,48 @@ $yellow: #ffd862;
 }
 
 body {
-  font-family: "Gotu", sans-serif;
+  color: var(--foreground);
+  // background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  // font-family: "Gotu", sans-serif;
   background: $yellow;
   display: grid;
   place-items: center;
-  height: 100vh;
+}
+
+.wrapper {
+  .messages {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    
+    .title {
+      color: white;
+      font-size: 5rem;
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+    .para, .paraJa {
+      color: #333;
+      font-size: 1rem;
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    .horizontalline {
+      border-color: #0a0a0a;
+      width: 100%;
+      height: 1px;
+      margin: 1rem 0;
+    }
+  }
+  .article {
+    height: 100svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 h1,
@@ -91,6 +122,7 @@ main {
     line-height: 1.1;
     text-transform: uppercase;
     word-break: break-all;
+    color: #222;
   }
   &__items {
     min-width: 100%;
@@ -166,7 +198,7 @@ main {
   }
 }
 
-.pasta {
+.banana {
   position: absolute;
   left: 0;
   top: 0;
@@ -280,13 +312,13 @@ main {
       }
     }
   }
-  &.penne .pasta__dish:before {
+  &.penne .banana__dish:before {
     box-shadow: 0 0px 30px rgba(0, 0, 0, 0.3);
   }
 }
 
-.spaghetti {
-  .pasta__background {
+.Banana {
+  .banana__background {
     transform: rotate(20deg);
   }
 }
@@ -310,37 +342,37 @@ main {
     border-radius: 2rem;
     background-position: 20rem;
   }
-  &[data-pasta="ravioli"] {
+  &[data-banana="ravioli"] {
     .menu.active svg.menu__link__shape {
       transform: rotate(45deg);
     }
   }
 }
 
-[data-pasta="spaghetti"] {
-  .spaghetti {
+[data-banana="Banana"] {
+  .Banana {
     visibility: visible;
   }
 }
 
-[data-pasta="penne"] {
+[data-banana="penne"] {
   .penne {
     visibility: visible;
   }
 }
-[data-pasta="fusilli"] {
+[data-banana="fusilli"] {
   .fusilli {
     visibility: visible;
   }
 }
 
-[data-pasta="farfalle"] {
+[data-banana="farfalle"] {
   .farfalle {
     visibility: visible;
   }
 }
 
-[data-pasta="ravioli"] {
+[data-banana="ravioli"] {
   .ravioli {
     visibility: visible;
   }

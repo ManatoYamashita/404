@@ -1,22 +1,22 @@
 // components/MenuItems.tsx
 import Image from 'next/image';
-import { PastaType, PastaInfo } from '../types/pasta';
+import { bananaType, bananaInfo } from '@/app/types/banana';
 
 interface MenuItemsProps {
   isOpen: boolean;
-  onPastaSelect: (type: PastaType) => void;
-  pastaData: Record<PastaType, PastaInfo>;
+  onbananaSelect: (type: bananaType) => void;
+  bananaData: Record<bananaType, bananaInfo>;
 }
 
-export function MenuItems({ isOpen, onPastaSelect, pastaData }: MenuItemsProps) {
+export function MenuItems({ isOpen, onbananaSelect, bananaData }: MenuItemsProps) {
   return (
     <div 
       className={`menu__items ${isOpen ? 'active' : ''}`}
     >
-      {Object.entries(pastaData).map(([type, data]) => (
+      {Object.entries(bananaData).map(([type, data]) => (
         <button
           key={type}
-          onClick={() => onPastaSelect(type as PastaType)}
+          onClick={() => onbananaSelect(type as bananaType)}
           data-destination={type}
           className="menu__item"
           type="button"

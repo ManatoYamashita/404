@@ -1,15 +1,15 @@
 import Image from 'next/image';
 
-interface PastaDishProps {
+interface BananaDishProps {
   type: string;
 }
 
-export function PastaDish({ type }: PastaDishProps) {
+export default function BananaDish({ type }: BananaDishProps) {
   return (
-    <figure className="pasta__dish">
-      <div className="pasta__dish__container">
+    <figure className="banana__dish">
+      <div className="banana__dish__container">
         <Image 
-          src="/image/p.jpeg"
+          src="/image/bnn.webp"
           alt={`${type} dish`}
           width={500}
           height={500}

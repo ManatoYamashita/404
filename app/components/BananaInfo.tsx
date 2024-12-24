@@ -1,16 +1,16 @@
-import { Recipe } from '../types/pasta';
+import { Recipe } from '../types/banana';
 
-interface PastaInfoProps {
+interface bananaInfoProps {
   type: string;
   recipes: Recipe[];
 }
 
-export function PastaInfo({ type, recipes }: PastaInfoProps) {
+export default function BananaInfo({ type, recipes }: bananaInfoProps) {
   return (
-    <div className="pasta__info">
+    <div className="banana__info">
       <small>Recipes for</small>
       <h2 data-splitting>{type}</h2>
-      <div className="pasta__info__recipes">
+      <div className="banana__info__recipes">
         {recipes.map((recipe, index) => (
           <a 
             key={index} 

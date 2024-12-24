@@ -1,7 +1,6 @@
-// hooks/useGsapAnimations.ts
 import { useCallback, useEffect } from 'react';
 import gsap from 'gsap';
-import { PastaType } from '../types/pasta';
+import { bananaType } from '@/app/types/banana';
 
 export function useGsapAnimations() {
   useEffect(() => {
@@ -20,20 +19,34 @@ export function useGsapAnimations() {
       rotateX: -45
     });
 
-    // 最初のパスタを表示
-    gsap.set('.pasta.spaghetti', {
-      display: 'block',
-      opacity: 1
+    // 最初の要素を表示
+    gsap.set('.banana.Banana', {
+      display: 'flex',
+      opacity: 1,
+      flexDirection: window.matchMedia('(max-width: 768px)').matches ? 'column' : 'row'
     });
     
-    // 他のパスタを非表示
-    gsap.set('.pasta:not(.spaghetti)', {
+    // 他の要素を非表示
+    gsap.set('.banana:not(.Banana)', {
       display: 'none',
       opacity: 0
     });
+
+    // メディアクエリの変更を監視してflex-directionを更新
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+    const handleMediaChange = (e: MediaQueryListEvent) => {
+      gsap.set('.banana.Banana', {
+        flexDirection: e.matches ? 'column' : 'row'
+      });
+    };
+    mediaQuery.addEventListener('change', handleMediaChange);
+
+    return () => {
+      mediaQuery.removeEventListener('change', handleMediaChange);
+    };
   }, []);
 
-  const animatePasta = useCallback((pastaType: PastaType) => {
+  const animatebanana = useCallback((bananaType: bananaType) => {
     const timeline = gsap.timeline();
     const svgPaths = document.querySelectorAll('.main-1, .main-2, .main-3');
     
@@ -46,7 +59,7 @@ export function useGsapAnimations() {
         ease: 'power3.out',
         onComplete: () => {
           svgPaths.forEach((path, index) => {
-            const targetPath = document.querySelector(`#${pastaType}-${index + 1}`);
+            const targetPath = document.querySelector(`#${bananaType}-${index + 1}`);
             if (targetPath) {
               path.setAttribute('d', targetPath.getAttribute('d') || '');
             }
@@ -64,21 +77,21 @@ export function useGsapAnimations() {
     return timeline;
   }, []);
 
-  const swapContent = useCallback((currentType: PastaType, nextType: PastaType) => {
+  const swapContent = useCallback((currentType: bananaType, nextType: bananaType) => {
     const timeline = gsap.timeline();
-    const currentElement = document.querySelector(`.pasta.${currentType}`);
-    const nextElement = document.querySelector(`.pasta.${nextType}`);
-    const background = document.querySelector('.pasta__background');
+    const currentElement = document.querySelector(`.banana.${currentType}`);
+    const nextElement = document.querySelector(`.banana.${nextType}`);
+    const background = document.querySelector('.banana__background');
     
     if (!currentElement || !nextElement) return timeline;
 
     timeline
-      .set(nextElement, { display: 'block', opacity: 0, xPercent: 100 })
+      .set(nextElement, { display: 'flex', opacity: 0, xPercent: 100 })
       .to(currentElement, {
         xPercent: -100,
         opacity: 0,
         duration: 0.5,
-        ease: 'power2.inOut'
+        ease: 'power2.inOut',
       })
       .to(background, {
         scale: 1.1,
@@ -150,7 +163,7 @@ export function useGsapAnimations() {
   }, []);
 
   return {
-    animatePasta,
+    animatebanana,
     swapContent,
     toggleMenu
   };

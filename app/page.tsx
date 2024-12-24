@@ -3,26 +3,26 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { PastaType } from '@/app/types/pasta';
-import { pastaData } from '@/app/data/pastaData';
+import { bananaType } from '@/app/types/banana';
+import { bananaData } from '@/app/data/BananaData';
 import { MenuIcon } from '@/app/components/MenuIcon';
 import { MenuItems } from '@/app/components/MenuItems';
-import { PastaInfo } from '@/app/components/PastaInfo';
-import { PastaDish } from '@/app/components/PastaDish';
+import BananaInfo from '@/app/components/BananaInfo';
+import BananaDish from '@/app/components/BananaDish';
 import { useGsapAnimations } from '@/app/hooks/useGsapAnimations';
 
-export default function PastaMenu() {
-  const [currentPasta, setCurrentPasta] = useState<PastaType>('spaghetti');
+export default function BananaMenu() {
+  const [currentbanana, setCurrentbanana] = useState<bananaType>('Banana');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { animatePasta, swapContent, toggleMenu } = useGsapAnimations();
+  const { animatebanana, swapContent, toggleMenu } = useGsapAnimations();
 
-  const handlePastaChange = (pastaType: PastaType) => {
-    if (pastaType !== currentPasta) {
+  const handlebananaChange = (bananaType: bananaType) => {
+    if (bananaType !== currentbanana) {
       setIsMenuOpen(false);
       toggleMenu(false);
-      animatePasta(pastaType);
-      swapContent(currentPasta, pastaType);
-      setCurrentPasta(pastaType);
+      animatebanana(bananaType);
+      swapContent(currentbanana, bananaType);
+      setCurrentbanana(bananaType);
     } else {
       setIsMenuOpen(false);
       toggleMenu(false);
@@ -36,7 +36,7 @@ export default function PastaMenu() {
   };
 
   return (
-    <div className="body-clone" data-pasta={currentPasta}>
+    <div className="body-clone" data-banana={currentbanana}>
       <nav className={`menu ${isMenuOpen ? 'active' : ''}`}>
         <div 
           className="menu__link"
@@ -50,28 +50,28 @@ export default function PastaMenu() {
         </div>
         <MenuItems 
           isOpen={isMenuOpen}
-          onPastaSelect={handlePastaChange}
-          pastaData={pastaData}
+          onbananaSelect={handlebananaChange}
+          bananaData={bananaData}
         />
       </nav>
 
       <main>
-        {Object.entries(pastaData).map(([type, data]) => (
+        {Object.entries(bananaData).map(([type, data]) => (
           <div 
             key={type} 
-            className={`pasta ${type} ${type === currentPasta ? 'active' : ''}`}
-            // style={{ display: type === currentPasta ? 'block' : 'none' }}
+            className={`banana ${type} ${type === currentbanana ? 'active' : ''}`}
+            style={{ display: type === currentbanana ? 'block' : 'none' }}
           >
             <Image
-              className="pasta__background"
-              src="/image/p.jpeg"
+              className="banana__background"
+              src="/image/bnn.webp"
               alt={type}
               width={500}
               height={500}
               priority
             />
-            <PastaInfo type={type} recipes={data.recipes} />
-            <PastaDish type={type} />
+            <BananaInfo type={type} recipes={data.recipes} />
+            <BananaDish type={type} />
           </div>
         ))}
       </main>

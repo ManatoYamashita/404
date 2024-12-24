@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.scss";
+import Link from "next/link";
+import Btn from "@/app/components/Btn";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +29,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+      <div className="wrapper">
+        <header className="messages">
+          <h1 className="title">404 Page not found</h1>
+          <p className="para">The page you are looking for does not exist. It might have been moved or deleted.Go back to the <Link href="https://manapuraza.com">manapuraza.com</Link>.Or do you want to know more about <strong>bananas</strong>?</p>
+          <hr className="horizontalline" />
+          <p className="paraJa">お探しのページは存在しません。移動されたか削除された可能性があります。<Link href="https://manapuraza.com">manapuraza.com</Link>に戻ってください。あるいは<strong>バナナ</strong>に詳しくなる？</p>
+          <Btn label="manapuraza.com" url="https://manapuraza.com" />
+        </header>
+        <article className="article">
+          {children} 
+        </article> 
+      </div>
       </body>
     </html>
   );
