@@ -1,7 +1,7 @@
 // app/page.tsx
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { bananaType } from '@/app/types/banana';
 import { bananaData } from '@/app/data/BananaData';
@@ -12,9 +12,14 @@ import BananaDish from '@/app/components/BananaDish';
 import { useGsapAnimations } from '@/app/hooks/useGsapAnimations';
 
 export default function BananaMenu() {
-  const [currentbanana, setCurrentbanana] = useState<bananaType>('Banana');
+  const [currentbanana, setCurrentbanana] = useState<bananaType>('Cavendish');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const { animatebanana, swapContent, toggleMenu } = useGsapAnimations();
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const handlebananaChange = (bananaType: bananaType) => {
     if (bananaType !== currentbanana) {
@@ -34,6 +39,10 @@ export default function BananaMenu() {
     setIsMenuOpen(newIsOpen);
     toggleMenu(newIsOpen);
   };
+
+  if (!isMounted) {
+    return null; // または適切なローディング表示
+  }
 
   return (
     <div className="body-clone" data-banana={currentbanana}>
@@ -60,18 +69,22 @@ export default function BananaMenu() {
           <div 
             key={type} 
             className={`banana ${type} ${type === currentbanana ? 'active' : ''}`}
-            style={{ display: type === currentbanana ? 'block' : 'none' }}
+            style={{ 
+              display: type === currentbanana ? 'flex' : 'none',
+              flexDirection: 'column',
+              opacity: type === currentbanana ? 1 : 0
+            }}
           >
             <Image
               className="banana__background"
-              src="/image/bnn.webp"
+              src={data.image}
               alt={type}
               width={500}
               height={500}
               priority
             />
-            <BananaInfo type={type} recipes={data.recipes} />
-            <BananaDish type={type} />
+            <BananaInfo type={type as bananaType} introdaction={data.introdaction} />
+            <BananaDish type={type as bananaType} />
           </div>
         ))}
       </main>

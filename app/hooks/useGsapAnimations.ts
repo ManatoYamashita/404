@@ -4,38 +4,37 @@ import { bananaType } from '@/app/types/banana';
 
 export function useGsapAnimations() {
   useEffect(() => {
-    // 初期状態の設定
-    gsap.set('.menu__items', {
-      yPercent: -100,
-      opacity: 0,
-      visibility: 'hidden',
-      zIndex: -1
-    });
+  // 初期状態の設定
+  gsap.set('.menu__items', {
+    yPercent: -100,
+    opacity: 0,
+    visibility: 'hidden',
+    zIndex: -1
+  });
 
-    // メニューアイテムを個別に設定
-    gsap.set('.menu__item', {
-      yPercent: 50,
-      opacity: 0,
-      rotateX: -45
-    });
+  // メニューアイテムを個別に設定
+  gsap.set('.menu__item', {
+    yPercent: 50,
+    opacity: 0,
+    rotateX: -45
+  });
 
-    // 最初の要素を表示
-    gsap.set('.banana.Banana', {
-      display: 'flex',
-      opacity: 1,
-      flexDirection: window.matchMedia('(max-width: 768px)').matches ? 'column' : 'row'
-    });
-    
-    // 他の要素を非表示
-    gsap.set('.banana:not(.Banana)', {
-      display: 'none',
-      opacity: 0
-    });
-
+  // 最初の要素（Cavendish）を表示
+  gsap.set('.banana.Cavendish', {
+    display: 'flex',
+    opacity: 1,
+    flexDirection: window.matchMedia('(max-width: 768px)').matches ? 'column' : 'row'
+  });
+  
+  // 他の要素を非表示
+  gsap.set('.banana:not(.Cavendish)', {
+    display: 'none',
+    opacity: 0
+  });
     // メディアクエリの変更を監視してflex-directionを更新
     const mediaQuery = window.matchMedia('(max-width: 768px)');
     const handleMediaChange = (e: MediaQueryListEvent) => {
-      gsap.set('.banana.Banana', {
+      gsap.set('.banana.Cavendish', {
         flexDirection: e.matches ? 'column' : 'row'
       });
     };

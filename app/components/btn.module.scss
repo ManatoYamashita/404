@@ -1,9 +1,13 @@
 .btn {
-    margin-top: 1rem;
-    width: 9em;
-    height: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // width: 9em;
+    // height: 3em;
+    width: max-content;
+    padding: .5em;
     border-radius: 30em;
-    font-size: 15px;
+    font-size: 20px;
     font-family: inherit;
     border: none;
     position: relative;
@@ -12,12 +16,24 @@
     color: black;
     box-shadow: 6px 6px 12px #d6ce38,
                 -6px -6px 12px #fff765;
+
+    .icon {
+        width: 3rem;
+        height: auto;
+    }
+
+    .label {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #333;
+    }
 }
 
 .btn::before {
     content: '';
     width: 0;
-    height: 3em;
+    height: 10em;
     border-radius: 30em;
     position: absolute;
     top: 0;
