@@ -1,6 +1,6 @@
 # manapuraza.com - 404 Page not found and Bananas
 
-![OGP Image](./public/ogp.jpg)
+![manapuraza-404](https://github.com/user-attachments/assets/6250b42e-c2dd-4087-9e7d-4245b6282d06)
 
 [https://manapuraza.com/404](https://manapuraza.com/404)
 
@@ -10,7 +10,7 @@
 
 ## 使用技術
 
-- Next.js(v14)
+- Next.js(v15)
 - TypeScript
 - SCSS
 - GSAP
