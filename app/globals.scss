@@ -2,18 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #171717;
-  }
-}
-
 $yellow: #ffd862;
 
 * {
@@ -21,7 +9,7 @@ $yellow: #ffd862;
 }
 
 body {
-  color: var(--foreground);
+  color: #171717;
   // background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   // font-family: "Gotu", sans-serif;
@@ -55,6 +43,7 @@ body {
 h1,
 h2 {
   font-family: "Baloo 2", cursive;
+  font-weight: 700;
 }
 
 a {
