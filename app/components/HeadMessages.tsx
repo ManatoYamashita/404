@@ -49,17 +49,19 @@ export default function HeadMessages() {
            <p className={styles.para}>The page you are looking for does not exist. It might have been moved or deleted.Go back to the <Link href="https://manapuraza.com">manapuraza.com</Link>.Or do you want to know more about <strong>bananas</strong>?</p>           <hr className={styles.horizontalline} />
            <p className={styles.paraJa}>お探しのページは存在しません。移動されたか削除された可能性があります。<Link href="https://manapuraza.com">manapuraza.com</Link>に戻ってください。あるいは<strong>バナナ</strong>に詳しくなる??</p>
            <div className={styles.btns}>
-                <Image
-                    src="https://manapuraza.com/404/image/logo.webp"
-                    alt="manapuraza.com"
-                    width={200}
-                    height={200}
-                    placeholder="blur"
-                    blurDataURL="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFUlEQVR42mN8//HLfwYiAE0FNxEUAAAYYgkID+UpogAAAABJRU5ErkJggg=="
-                    quality={50}
-                    loading="eager"
-                    priority
-                />
+                <Link className={styles.logo} href="https://manapuraza.com" aria-label='manapuraza.com'>
+                    <Image
+                        src="https://manapuraza.com/404/image/logo.webp"
+                        alt="manapuraza.com"
+                        width={200}
+                        height={200}
+                        placeholder="blur"
+                        blurDataURL="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFUlEQVR42mN8//HLfwYiAE0FNxEUAAAYYgkID+UpogAAAABJRU5ErkJggg=="
+                        quality={50}
+                        loading="eager"
+                        priority
+                    />
+                </Link>
                <Btn url="https://manapuraza.com" icon="/image/mnprz-white.webp" />
                <Btn url="https://bento.me/ym" icon="/image/links.svg" label="Links" />
            </div>
