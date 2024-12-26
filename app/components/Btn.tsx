@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './btn.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 interface BtnProps {
     label?: string;
@@ -10,6 +11,9 @@ interface BtnProps {
 }
 
 export default function Btn({ label, url, icon }: BtnProps) {
+    
+    const pathname = usePathname();
+
     return (
         <Link 
             href={url} 
@@ -18,7 +22,7 @@ export default function Btn({ label, url, icon }: BtnProps) {
         >
         {icon && (
             <Image 
-                src={icon} 
+                src={`${pathname}${icon}`}
                 alt="button icon"
                 width={100} 
                 height={100}

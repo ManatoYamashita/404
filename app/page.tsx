@@ -1,6 +1,6 @@
-// app/page.tsx
 "use client";
 
+import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { bananaType } from '@/app/types/banana';
@@ -16,6 +16,8 @@ export default function BananaMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const { animatebanana, swapContent, toggleMenu } = useGsapAnimations();
+
+  const pathname = usePathname();
 
   useEffect(() => {
     setIsMounted(true);
@@ -41,7 +43,7 @@ export default function BananaMenu() {
   };
 
   if (!isMounted) {
-    return null; // または適切なローディング表示
+    return null;
   }
 
   return (
@@ -77,7 +79,7 @@ export default function BananaMenu() {
           >
             <Image
               className="banana__background"
-              src={data.image}
+              src={`${pathname}${data.image}`}
               alt={type}
               width={500}
               height={500}
