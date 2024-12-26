@@ -60,6 +60,7 @@ export default function HeadMessages() {
                         quality={50}
                         loading="eager"
                         priority
+                        className={styles.logoImg}
                     />
                 </Link>
                <Btn url="https://manapuraza.com" icon="/image/mnprz-white.webp" />
