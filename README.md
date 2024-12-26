@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# manapuraza.com - 404 Page not found and Bananas
 
-## Getting Started
+![OGP Image](./public/ogp.jpg)
 
-First, run the development server:
+[https://manapuraza.com/404](https://manapuraza.com/404)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 概要
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+このプロジェクトは、`https://manapuraza.com`の404エラーページとバナナに関する情報を提供するウェブサイトです。ページが見つからない場合に、バナナについて学ぶことができます。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 使用技術
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Next.js(v14)
+- TypeScript
+- SCSS
+- GSAP
+- ESLint
 
-## Learn More
+## ディレクトリ構成
 
-To learn more about Next.js, take a look at the following resources:
+- `app/`: アプリケーションの主要なコンポーネントとページ
+  - `components/`: 再利用可能なReactコンポーネント
+  - `page.tsx`: メインページのコンポーネント
+  - `layout.tsx`: レイアウトコンポーネント
+- `next.config.ts`: Next.jsの設定ファイル
+- `.next/`: ビルド出力ディレクトリ
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## インストールとセットアップ
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. リポジトリをクローンします。
 
-## Deploy on Vercel
+   ```bash
+   git clone https://github.com/yourusername/manapuraza.git
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. 依存関係をインストールします。
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   cd manapuraza
+   npm install
+   ```
+
+3. 開発サーバーを起動します。
+
+   ```bash
+   npm run dev
+   ```
+
+4. ブラウザで `http://localhost:3000` を開きます。
+
+## デプロイ
+
+このプロジェクトは静的エクスポートを使用してデプロイされます。以下のコマンドを実行してビルドします。
