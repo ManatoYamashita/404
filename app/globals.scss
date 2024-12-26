@@ -178,24 +178,22 @@ main {
   position: absolute;
   left: 0;
   top: 0;
-  // display: flex;
-  // flex-direction: column;
   width: 100%;
   font-size: 1.4rem;
   visibility: hidden;
   overflow: hidden;
   @media (min-width: 680px) {
-    // display: grid;
-    // grid-template-columns: 1fr 33rem;
     height: 100vh;
   }
   h2 {
-    font: 3rem / 1.2 "Gotu", sans-serif;
+    font: 3rem / 1.2 Arial, Helvetica, "Baloo 2", sans-serif;
+    font-weight: 700;
     letter-spacing: -0.1rem;
     margin-bottom: 3rem;
     margin-left: 1rem;
     @media (min-width: 680px) {
-      font: 5rem / 1.2 "Gotu", sans-serif;
+      font: 5rem / 1.2 Arial, Helvetica, "Baloo 2", sans-serif;
+      font-weight: 700;
       margin-left: 3rem;
       overflow: hidden;
       white-space: nowrap;
