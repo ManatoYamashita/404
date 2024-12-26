@@ -9,7 +9,7 @@
 このプロジェクトは、`https://manapuraza.com`の404エラーページとバナナに関する情報を提供するウェブサイトです。ページが見つからない場合に、バナナについて学ぶことができます。
 レスポンシブデザインにも対応しています。
 
-<img src="https://github.com/user-attachments/assets/65340e52-5543-42a3-a88d-37a895a9205b" alt="mnprz-404_preview-pc" hright="100" /> <img src="https://github.com/user-attachments/assets/f040323b-d9a0-4c57-8525-1a831d04e598" alt="mnprz-404_preview-mobile" height="100" />
+<img src="https://github.com/user-attachments/assets/65340e52-5543-42a3-a88d-37a895a9205b" alt="mnprz-404_preview-pc" height="200" /> <img src="https://github.com/user-attachments/assets/f040323b-d9a0-4c57-8525-1a831d04e598" alt="mnprz-404_preview-mobile" height="200" />
 
 ## 使用技術
 
