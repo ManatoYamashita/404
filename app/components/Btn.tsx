@@ -25,6 +25,9 @@ export default function Btn({ label, url, icon }: BtnProps) {
                 width={100} 
                 height={100}
                 className={styles.icon}
+                placeholder="blur"
+                blurDataURL="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFUlEQVR42mN8//HLfwYiAE0FNxEUAAAYYgkID+UpogAAAABJRU5ErkJggg=="
+                sizes="(max-width: 768px) 100vw, 50vw"
             />
         )}
         <span className={styles.label}>{label}</span>

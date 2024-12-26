@@ -24,11 +24,15 @@ export function MenuItems({ isOpen, onbananaSelect, bananaData }: MenuItemsProps
         >
           <div className="menu__item-image">
             <Image 
-                src={getImagePath(data.image)}
+              src={getImagePath(data.image)}
               alt={type}
               width={200}
               height={200}
-              priority
+              placeholder="blur"
+              blurDataURL="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFUlEQVR42mN8//HLfwYiAE0FNxEUAAAYYgkID+UpogAAAABJRU5ErkJggg=="
+              quality={50}
+              loading={type === "Cavendish" ? 'eager' : 'lazy'}
+              priority={type === "Cavendish"}
             />
           </div>
           <span className="menu__item-text">

@@ -81,7 +81,10 @@ export default function BananaMenu() {
               alt={type}
               width={500}
               height={500}
-              priority
+              priority={true}
+              placeholder="blur"
+              blurDataURL="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFUlEQVR42mN8//HLfwYiAE0FNxEUAAAYYgkID+UpogAAAABJRU5ErkJggg=="
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
             <BananaInfo type={type as bananaType} introdaction={data.introdaction} />
             <BananaDish type={type as bananaType} data={data} />

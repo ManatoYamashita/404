@@ -92,6 +92,14 @@ export default function RootLayout({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <head>
+        <link
+          rel="preload"
+          href={`${process.env.NEXT_PUBLIC_BASE_PATH}/image/bnn.webp`}
+          as="image"
+          type="image/webp"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

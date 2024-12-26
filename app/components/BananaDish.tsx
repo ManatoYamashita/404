@@ -16,7 +16,11 @@ export default function BananaDish({ type, data }: BananaDishProps) {
           alt={`${type} dish`}
           width={500}
           height={500}
-          priority
+          placeholder="blur"
+          blurDataURL="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFUlEQVR42mN8//HLfwYiAE0FNxEUAAAYYgkID+UpogAAAABJRU5ErkJggg=="
+          sizes="(max-width: 768px) 100vw, 50vw"
+          loading={type === 'Cavendish' ? 'eager' : 'lazy'}
+          priority={type === 'Cavendish'}
         />
       </div>
     </figure>
