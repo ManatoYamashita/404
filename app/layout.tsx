@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description: "The page you are looking for does not exist. It might have been moved or deleted, btw do you learn about bananas?",
     images: [
       {
-        url: `https://manapuraza.com${process.env.NEXT_PUBLIC_BASE_PATH}/ogp.jpg`,
+        url: `https://manapuraza.com${process.env.NEXT_PUBLIC_BASE_PATH}/image/ogp.jpg`,
         width: 1200,
         height: 630,
         alt: "manapuraza.com - 404 Page not found and Bananas",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@manapuraza",
-    images: [`https://manapuraza.com${process.env.NEXT_PUBLIC_BASE_PATH}/ogp.jpg`],
+    images: [`https://manapuraza.com${process.env.NEXT_PUBLIC_BASE_PATH}/image/ogp.jpg`],
   },
 };
 
@@ -45,7 +45,7 @@ const jsonLd = {
   '@type': 'WebPage',
   name: 'manapuraza.com - 404 Page not found and Bananas',
   description: 'The page you are looking for does not exist. It might have been moved or deleted, btw do you learn about bananas?',
-  image: getFullUrl('ogp.jpg'),
+  image: getFullUrl('image/ogp.jpg'),
   url: `https://manapuraza.com${process.env.NEXT_PUBLIC_BASE_PATH}`,
   author: {
     '@type': 'Person',
@@ -57,13 +57,13 @@ const jsonLd = {
     name: 'manapuraza',
     logo: {
       '@type': 'ImageObject',
-      url: getFullUrl('ogp.jpg')
+      url: getFullUrl('image/ogp.jpg')
     }
   },
   mainEntity: {
     '@type': 'Article',
     headline: 'Bananas Information',
-    image: getFullUrl('ogp.jpg'),
+    image: getFullUrl('image/ogp.jpg'),
     author: {
       '@type': 'Person',
       name: 'Manato Yamashita'
@@ -73,14 +73,13 @@ const jsonLd = {
       name: 'manapuraza',
       logo: {
         '@type': 'ImageObject',
-        url: getFullUrl('ogp.jpg')
+        url: getFullUrl('image/ogp.jpg')
       }
     },
     datePublished: '2024-12-26',
     dateModified: '2024-12-26'
   }
 };
-
 
 export default function RootLayout({
   children,
