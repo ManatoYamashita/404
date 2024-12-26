@@ -20,14 +20,22 @@ export const metadata: Metadata = {
   openGraph: {
     title: "manapuraza.com - 404 Page not found and Bananas",
     description: "The page you are looking for does not exist. It might have been moved or deleted, btw do you learn about bananas?",
-    images: "/ogp.jpg",
+    images: [
+      {
+        url: `https://manapuraza.com${process.env.NEXT_PUBLIC_BASE_PATH}/ogp.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "manapuraza.com - 404 Page not found and Bananas",
+      }
+    ],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: `${process.env.NEXT_PUBLIC_BASE_PATH}/favicon.ico`,
   },
   twitter: {
     card: "summary_large_image",
     site: "@manapuraza",
+    images: [`https://manapuraza.com${process.env.NEXT_PUBLIC_BASE_PATH}/ogp.jpg`],
   }
 };
 
