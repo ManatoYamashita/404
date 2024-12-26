@@ -16,11 +16,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "manapuraza.com - 404 Page not found and Bananas",
-  description: "The page you are looking for does not exist. It might have been moved or deleted, btw do you learn about bananas?",
+  description: "The page you are looking for does not exist. It might have been moved or deleted, btw do you learn about bananas? | ページが見つかりませんでした。ところで、バナナについて学びますか？",
   keywords: ["manapuraza", "山下マナト", "バナナ", "404"],
   openGraph: {
     title: "manapuraza.com - 404 Page not found and Bananas",
-    description: "The page you are looking for does not exist. It might have been moved or deleted, btw do you learn about bananas?",
+    description: "The page you are looking for does not exist. It might have been moved or deleted, btw do you learn about bananas? | ページが見つかりませんでした。ところで、バナナについて学びますか？",
     images: [
       {
         url: `https://manapuraza.com${process.env.NEXT_PUBLIC_BASE_PATH}/image/ogp.jpg`,
@@ -44,7 +44,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'manapuraza.com - 404 Page not found and Bananas',
-  description: 'The page you are looking for does not exist. It might have been moved or deleted, btw do you learn about bananas?',
+  description: "The page you are looking for does not exist. It might have been moved or deleted, btw do you learn about bananas? | ページが見つかりませんでした。ところで、バナナについて学びますか？",
   image: getFullUrl('image/ogp.jpg'),
   url: `https://manapuraza.com${process.env.NEXT_PUBLIC_BASE_PATH}`,
   author: {
