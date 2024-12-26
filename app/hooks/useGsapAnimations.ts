@@ -23,7 +23,7 @@ export function useGsapAnimations() {
   gsap.set('.banana.Cavendish', {
     display: 'flex',
     opacity: 1,
-    flexDirection: window.matchMedia('(max-width: 768px)').matches ? 'column' : 'row'
+    // flexDirection: window.matchMedia('(min-width: 680px)').matches ? 'column' : 'row'
   });
   
   // 他の要素を非表示
@@ -32,17 +32,17 @@ export function useGsapAnimations() {
     opacity: 0
   });
     // メディアクエリの変更を監視してflex-directionを更新
-    const mediaQuery = window.matchMedia('(max-width: 768px)');
-    const handleMediaChange = (e: MediaQueryListEvent) => {
-      gsap.set('.banana.Cavendish', {
-        flexDirection: e.matches ? 'column' : 'row'
-      });
-    };
-    mediaQuery.addEventListener('change', handleMediaChange);
+    // const mediaQuery = window.matchMedia('(min-width: 680px)');
+    // const handleMediaChange = (e: MediaQueryListEvent) => {
+    //   gsap.set('.banana.Cavendish', {
+    //     flexDirection: e.matches ? 'column' : 'row'
+    //   });
+    // };
+    // mediaQuery.addEventListener('change', handleMediaChange);
 
-    return () => {
-      mediaQuery.removeEventListener('change', handleMediaChange);
-    };
+    // return () => {
+    //   mediaQuery.removeEventListener('change', handleMediaChange);
+    // };
   }, []);
 
   const animatebanana = useCallback((bananaType: bananaType) => {

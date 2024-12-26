@@ -84,7 +84,7 @@ export default function BananaMenu() {
               priority
             />
             <BananaInfo type={type as bananaType} introdaction={data.introdaction} />
-            <BananaDish type={type as bananaType} />
+            <BananaDish type={type as bananaType} data={data} />
           </div>
         ))}
       </main>

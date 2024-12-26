@@ -189,13 +189,15 @@ main {
   position: absolute;
   left: 0;
   top: 0;
+  // display: flex;
+  // flex-direction: column;
   width: 100%;
   font-size: 1.4rem;
   visibility: hidden;
   overflow: hidden;
   @media (min-width: 680px) {
-    display: grid;
-    grid-template-columns: 1fr 33rem;
+    // display: grid;
+    // grid-template-columns: 1fr 33rem;
     height: 100vh;
   }
   h2 {
@@ -304,7 +306,7 @@ main {
   }
 }
 
-.Banana {
+.banana {
   .banana__background {
     transform: rotate(20deg);
   }
@@ -362,5 +364,11 @@ main {
 [data-banana="Banana"] {
   .Banana {
     visibility: visible;
+  }
+}
+
+body > div > article > div > main > div.active {
+  @media (min-width: 780px) {
+    flex-direction: row !important;
   }
 }
