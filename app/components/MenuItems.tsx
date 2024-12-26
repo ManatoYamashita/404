@@ -1,7 +1,7 @@
 // components/MenuItems.tsx
 import Image from 'next/image';
 import { bananaType, bananaInfo } from '@/app/types/banana';
-import { usePathname } from 'next/navigation';
+import { getImagePath } from '../utils/getImagePath';
 
 interface MenuItemsProps {
   isOpen: boolean;
@@ -10,7 +10,6 @@ interface MenuItemsProps {
 }
 
 export function MenuItems({ isOpen, onbananaSelect, bananaData }: MenuItemsProps) {
-  const pathname = usePathname();
   return (
     <div 
       className={`menu__items ${isOpen ? 'active' : ''}`}
@@ -25,7 +24,7 @@ export function MenuItems({ isOpen, onbananaSelect, bananaData }: MenuItemsProps
         >
           <div className="menu__item-image">
             <Image 
-                src={`${pathname}${data.image}`}
+                src={getImagePath(data.image)}
               alt={type}
               width={200}
               height={200}

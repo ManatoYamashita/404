@@ -1,6 +1,5 @@
 "use client";
 
-import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { bananaType } from '@/app/types/banana';
@@ -10,14 +9,13 @@ import { MenuItems } from '@/app/components/MenuItems';
 import BananaInfo from '@/app/components/BananaInfo';
 import BananaDish from '@/app/components/BananaDish';
 import { useGsapAnimations } from '@/app/hooks/useGsapAnimations';
+import { getImagePath } from '@/app/utils/getImagePath';
 
 export default function BananaMenu() {
   const [currentbanana, setCurrentbanana] = useState<bananaType>('Cavendish');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const { animatebanana, swapContent, toggleMenu } = useGsapAnimations();
-
-  const pathname = usePathname();
 
   useEffect(() => {
     setIsMounted(true);
@@ -79,7 +77,7 @@ export default function BananaMenu() {
           >
             <Image
               className="banana__background"
-              src={`${pathname}${data.image}`}
+              src={getImagePath(data.image)}
               alt={type}
               width={500}
               height={500}
