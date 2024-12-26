@@ -19,6 +19,8 @@ body {
 }
 
 .wrapper {
+  width: 100vw;
+  overflow-x: hidden;
   .article {
     height: 100svh;
     display: flex;
